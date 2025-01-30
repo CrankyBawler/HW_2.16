@@ -16,7 +16,7 @@ public class IntegerListImpl implements IntegerList {
 
     public Integer add(int item) {
         if (size == items.length) {
-            items = Arrays.copyOf(items, items.length * 2);
+            grow();
         }
         items[size] = item;
         size++;
@@ -29,7 +29,7 @@ public class IntegerListImpl implements IntegerList {
             throw new IndexOutOfBoundsException("Такого индекса массива не существует " + index);
         }
         if (size == items.length) {
-            items = Arrays.copyOf(items, items.length * 2);
+            grow();
         }
         System.arraycopy(items, index, items, index + 1, size - index);
         items[index] = item;
@@ -200,7 +200,46 @@ public class IntegerListImpl implements IntegerList {
         arr[indexB] = tmp;
     }
 
+    @Override
+    public void grow() {
+        int newCapacity = (int) (items.length * 1.5);
+        Integer[] newArray = new Integer[newCapacity];
+        System.arraycopy(items, 0, newArray, 0, items.length);
+
+        items = newArray;
+
+    }
+
+    public static void quickSort(Integer[] arr, int begin, int end) {
+        if (begin < end) {
+            int partitionIndex = partition(arr, begin, end);
+
+            quickSort(arr, begin, partitionIndex - 1);
+            quickSort(arr, partitionIndex + 1, end);
+        }
+    }
+
+    private static int partition(Integer[] arr, int begin, int end) {
+        int pivot = arr[end];
+        int i = (begin - 1);
+
+        for (int j = begin; j < end; j++) {
+            if (arr[j] <= pivot) {
+                i++;
+
+                swapElements(arr, i, j);
+            }
+        }
+
+        swapElements(arr, i + 1, end);
+        return i + 1;
+    }
 
 }
+
+
+
+
+
 
 

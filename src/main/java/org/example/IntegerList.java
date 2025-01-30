@@ -79,4 +79,6 @@ public interface IntegerList {
 
 
     void sortSelection(Integer[] array);
+
+    void grow();
 }

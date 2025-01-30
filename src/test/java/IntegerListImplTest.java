@@ -231,4 +231,53 @@ public class IntegerListImplTest {
         assertArrayEquals(new Integer[]{1, 2, 3}, integerListImpl.toArray());
 
     }
+
+//    @Test
+//    public void testQuickSortWithEmptyArray() {
+//        Integer[] array = {};
+//        quickSort(array, 0, array.length - 1);
+//        Assert.assertArrayEquals(new Integer[]{}, array);
+//    }
+//
+//    @Test
+//    public void testQuickSortWithOneElement() {
+//        Integer[] array = {1};
+//        quickSort(array, 0, array.length - 1);
+//        Assert.assertArrayEquals(new Integer[]{1}, array);
+//    }
+//
+//    @Test
+//    public void testQuickSortWithSortedArray() {
+//        Integer[] array = {1, 2, 3, 4, 5};
+//        quickSort(array, 0, array.length - 1);
+//        Assert.assertArrayEquals(new Integer[]{1, 2, 3, 4, 5}, array);
+//    }
+//
+//    @Test
+//    public void testQuickSortWithUnsortedArray() {
+//        Integer[] array = {5, 3, 8, 6, 2};
+//        quickSort(array, 0, array.length - 1);
+//        Assert.assertArrayEquals(new Integer[]{2, 3, 5, 6, 8}, array);
+//    }
+//
+//    @Test
+//    public void testQuickSortWithDuplicateElements() {
+//        Integer[] array = {3, 1, 2, 3, 3, 1};
+//        quickSort(array, 0, array.length - 1);
+//        Assert.assertArrayEquals(new Integer[]{1, 1, 2, 3, 3, 3}, array);
+//    }
+//
+//    @Test
+//    public void testQuickSortWithAllSameElements() {
+//        Integer[] array = {7, 7, 7, 7, 7};
+//        quickSort(array, 0, array.length - 1);
+//        Assert.assertArrayEquals(new Integer[]{7, 7, 7, 7, 7}, array);
+//    }
+//
+//    @Test
+//    public void testQuickSortWithReverseSortedArray() {
+//        Integer[] array = {5, 4, 3, 2, 1};
+//        quickSort(array, 0, array.length - 1);
+//        Assert.assertArrayEquals(new Integer[]{1, 2, 3, 4, 5}, array);
+//    }
 }
