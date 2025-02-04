@@ -3,6 +3,7 @@ import org.example.IntegerListImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.example.IntegerListImpl.quickSort;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -232,52 +233,44 @@ public class IntegerListImplTest {
 
     }
 
-//    @Test
-//    public void testQuickSortWithEmptyArray() {
-//        Integer[] array = {};
-//        quickSort(array, 0, array.length - 1);
-//        Assert.assertArrayEquals(new Integer[]{}, array);
-//    }
-//
-//    @Test
-//    public void testQuickSortWithOneElement() {
-//        Integer[] array = {1};
-//        quickSort(array, 0, array.length - 1);
-//        Assert.assertArrayEquals(new Integer[]{1}, array);
-//    }
-//
-//    @Test
-//    public void testQuickSortWithSortedArray() {
-//        Integer[] array = {1, 2, 3, 4, 5};
-//        quickSort(array, 0, array.length - 1);
-//        Assert.assertArrayEquals(new Integer[]{1, 2, 3, 4, 5}, array);
-//    }
-//
-//    @Test
-//    public void testQuickSortWithUnsortedArray() {
-//        Integer[] array = {5, 3, 8, 6, 2};
-//        quickSort(array, 0, array.length - 1);
-//        Assert.assertArrayEquals(new Integer[]{2, 3, 5, 6, 8}, array);
-//    }
-//
-//    @Test
-//    public void testQuickSortWithDuplicateElements() {
-//        Integer[] array = {3, 1, 2, 3, 3, 1};
-//        quickSort(array, 0, array.length - 1);
-//        Assert.assertArrayEquals(new Integer[]{1, 1, 2, 3, 3, 3}, array);
-//    }
-//
-//    @Test
-//    public void testQuickSortWithAllSameElements() {
-//        Integer[] array = {7, 7, 7, 7, 7};
-//        quickSort(array, 0, array.length - 1);
-//        Assert.assertArrayEquals(new Integer[]{7, 7, 7, 7, 7}, array);
-//    }
-//
-//    @Test
-//    public void testQuickSortWithReverseSortedArray() {
-//        Integer[] array = {5, 4, 3, 2, 1};
-//        quickSort(array, 0, array.length - 1);
-//        Assert.assertArrayEquals(new Integer[]{1, 2, 3, 4, 5}, array);
-//    }
+    @Test
+    public void testQuickSortWithEmptyArray() {
+        Integer[] array = {};
+        quickSort(array, 0, array.length - 1);
+        assertArrayEquals(new Integer[]{}, array);
+
+        Integer[] array1 = {1};
+        quickSort(array1, 0, array1.length - 1);
+        assertArrayEquals(new Integer[]{1}, array1);
+
+        Integer[] array2 = {1, 2, 3, 4, 5};
+        quickSort(array2, 0, array2.length - 1);
+        assertArrayEquals(new Integer[]{1, 2, 3, 4, 5}, array2);
+
+        Integer[] array3 = {5, 3, 8, 6, 2};
+        quickSort(array3, 0, array3.length - 1);
+        assertArrayEquals(new Integer[]{2, 3, 5, 6, 8}, array3);
+
+        Integer[] array4 = {3, 1, 2, 3, 3, 1};
+        quickSort(array4, 0, array4.length - 1);
+        assertArrayEquals(new Integer[]{1, 1, 2, 3, 3, 3}, array4);
+
+        Integer[] array5 = {7, 7, 7, 7, 7};
+        quickSort(array5, 0, array5.length - 1);
+        assertArrayEquals(new Integer[]{7, 7, 7, 7, 7}, array5);
+
+        Integer[] array6 = {5, 4, 3, 2, 1};
+        quickSort(array6, 0, array6.length - 1);
+        assertArrayEquals(new Integer[]{1, 2, 3, 4, 5}, array6);
+
+        Integer[] array7 = {5, 8, 4, 0, -2};
+        quickSort(array7, 0, array7.length - 1);
+        assertArrayEquals(new Integer[] {-2, 0, 4, 5, 8}, array7);
+
+        Integer[] array8 = {-5, -8, -4, 0, -2};
+        quickSort(array8, 0, array8.length - 1);
+        assertArrayEquals(new Integer[] {-8, -5, -4, -2, 0}, array8);
+
+
+    }
 }
